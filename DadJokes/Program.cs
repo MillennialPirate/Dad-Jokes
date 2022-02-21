@@ -1,4 +1,5 @@
 using DadJokes.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ string conString = builder.Configuration.GetConnectionString("DefaultConnection"
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(conString));
 builder.Services.AddControllersWithViews();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
 var app = builder.Build();
 
