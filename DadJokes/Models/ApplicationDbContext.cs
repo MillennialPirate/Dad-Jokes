@@ -6,6 +6,6 @@ namespace DadJokes.Models
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
-
+        public DbSet<ViewModels.JokeVM> Jokes { get; set; }
     }
 }

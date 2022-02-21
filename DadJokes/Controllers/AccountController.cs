@@ -50,7 +50,7 @@ namespace DadJokes.Controllers
                 {
                     await _userManager.CreateAsync(user, model.RoleName);
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Joke");
                 }
                 foreach(var error in result.Errors)
                 {
@@ -69,7 +69,7 @@ namespace DadJokes.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {   
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Joke");
                 }
                 ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
             }
