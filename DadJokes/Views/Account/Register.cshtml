@@ -14,7 +14,7 @@
                         <input asp-for = "Name" class = "form-control"/>
                         <span asp-validation-for = "Name" class = "text-danger"></span>
                     </div>
-                </div>
+                </div>  
                 <div class = "form-group row">
                     <label class = "col-md-2" asp-for = "Email"></label>
                     <div class = "col-md-10">
@@ -39,7 +39,7 @@
                 <div class = "form-group row">
                     <label class = "col-md-2" asp-for = "RoleName"></label>
                     <div class = "col-md-10">
-                        <select asp-for = "RoleName" asp-items = "@DadJokes.Helper.Helper.GetRolesDropDown()" class = "form-control"/>
+                        <select asp-for = "RoleName" asp-items = "@DadJokes.Helper.Helper.GetRolesDropDown()" class = "form-control"></select>
                         <span asp-validation-for = "RoleName" class = "text-danger"></span>
                     </div>
                 </div>
