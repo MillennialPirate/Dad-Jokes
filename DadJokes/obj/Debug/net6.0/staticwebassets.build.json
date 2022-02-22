@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4S3dgyo4u+qdJTjeEs8c5qsTr9jyU9PB1oHPUULfspI=",
+  "Hash": "CfOmwV/5iMkpg1cV8UJS9qMSgd6FoPbFPIX8Mw8LT7I=",
   "Source": "DadJokes",
   "BasePath": "_content/DadJokes",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Siddharth.S.Chandran\\Desktop\\MyProjects\\DadJokes\\DadJokes\\wwwroot\\js\\util.js",
+      "SourceId": "DadJokes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Siddharth.S.Chandran\\Desktop\\MyProjects\\DadJokes\\DadJokes\\wwwroot\\",
+      "BasePath": "_content/DadJokes",
+      "RelativePath": "js/util.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\util.js"
     },
     {
       "Identity": "C:\\Users\\Siddharth.S.Chandran\\Desktop\\MyProjects\\DadJokes\\DadJokes\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

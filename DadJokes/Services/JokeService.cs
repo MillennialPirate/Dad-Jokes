@@ -26,13 +26,7 @@ namespace DadJokes.Services
         }
         public List<JokeVM> GetJokes()
         {
-            List<JokeVM> temp = new List<JokeVM>();
-            temp.Add(new JokeVM
-            {
-                Question = "Is this a dad joke",
-                Answer = "Yes it is", 
-                Author = "Siddharth"
-            });
+            List<JokeVM> temp = _db.Jokes.ToList();
             return temp;
         }
     }

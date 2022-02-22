@@ -9,24 +9,24 @@
                 <hr/>
                 <div asp-validation-summary = "ModelOnly" class = "text-danger">
                 </div>
-                <input asp-for = "Author" value = "@User.Identity.Name" hidden = "true"/>
+                <input id = "Author" asp-for = "Author" value = "@User.Identity.Name" hidden = "true"/>
                 <div class = "form-group row">
                     <label class = "col-md-2" asp-for = "Question"></label>
                     <div class = "col-md-10">
-                        <input asp-for = "Question" class = "form-control"/>
+                        <input id = "Question" asp-for = "Question" class = "form-control"/>
                         <span asp-validation-for = "Question" class = "text-danger"></span>
                     </div>
                 </div>
                 <div class = "form-group row">
                     <label class = "col-md-2" asp-for = "Answer"></label>
                     <div class = "col-md-10">
-                        <input asp-for = "Answer" class = "form-control"/>
+                        <input id = "Answer" asp-for = "Answer" class = "form-control"/>
                         <span asp-validation-for = "Answer" class = "text-danger"></span>
                     </div>
                 </div>
                 <div class = "form-group">
                     <div class = "col-md-10 offset-md-2">
-                        <input type = "submit" value = "Create" class = "btn btn-success"/>
+                        <button type = "button" class = "btn btn-success" onclick = "submitJoke();return false">Submit</button>
                     </div>
                 </div>
             </form>
