@@ -11,22 +11,42 @@ namespace DadJokes.Services
         }
         public int AddUpdate(JokeVM model)
         {
-            var question = model.Question; 
-            var answer = model.Answer;
-            var author = model.Author;
-            JokeVM joke = new JokeVM()
+            if(model != null && model.Id > 0)
             {
-                Question = question,
-                Answer = answer,    
-                Author = author,
-            };
-            _db.Jokes.Add(joke);
-            _db.SaveChanges();
-            return 0;
+                //updating
+                //find the object from the database 
+                var joke = _db.Jokes.FirstOrDefault(x => x.Id == model.Id);
+                joke.Question = model.Question;
+                joke.Answer = model.Answer; 
+                joke.Author = model.Author;
+                _db.SaveChanges();
+                return 1; 
+            }
+            else
+            {
+                //inserting
+                var question = model.Question;
+                var answer = model.Answer;
+                var author = model.Author;
+                JokeVM joke = new JokeVM()
+                {
+                    Question = question,
+                    Answer = answer,
+                    Author = author,
+                };
+                _db.Jokes.Add(joke);
+                _db.SaveChanges();
+                return 0;
+            }
         }
         public List<JokeVM> GetJokes()
         {
             List<JokeVM> temp = _db.Jokes.ToList();
+            return temp;
+        }
+        public List<JokeVM> GetJokesByUser(string userName)
+        {
+            List<JokeVM> temp = _db.Jokes.Where(x => x.Author == userName).ToList();
             return temp;
         }
     }

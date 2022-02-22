@@ -5,5 +5,6 @@ namespace DadJokes.Services
     {
         public List<JokeVM> GetJokes();
         public int AddUpdate(JokeVM model);
+        public List<JokeVM> GetJokesByUser(string userName);
     }
 }

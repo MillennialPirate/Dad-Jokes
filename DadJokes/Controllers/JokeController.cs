@@ -19,5 +19,10 @@ namespace DadJokes.Controllers
         {
             return View();
         }
+        public IActionResult GetByAuthor(string username)
+        {
+            ViewBag.Jokes = _jokeService.GetJokesByUser(username);
+            return View();
+        }
     }
 }

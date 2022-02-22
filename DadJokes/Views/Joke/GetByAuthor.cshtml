@@ -1,13 +1,9 @@
-﻿@inject Microsoft.AspNetCore.Identity.SignInManager<DadJokes.Models.ApplicationUser> signInManager
+﻿
+@{
+    ViewData["Title"] = "GetByAuthor";
+}
 
-<h1>All Jokes</h1>
-<form>
-    
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button  class = "btn btn-primary" asp-action = "Create" asp-controller = "Joke">Create</button>
-        <a  class="btn btn-success" asp-route-Username = "@User.Identity.Name" asp-action = "GetByAuthor" asp-controller = "Joke"  >Your jokes</a>
-    </div>
-</form>
+<h1>Your dad jokes</h1>
 <table class="table">
   <thead>
     <tr>
