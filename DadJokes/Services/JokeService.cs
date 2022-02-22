@@ -11,11 +11,12 @@ namespace DadJokes.Services
         }
         public int AddUpdate(JokeVM model)
         {
-            if(model != null && model.Id > 0)
+            if(model.Id > 0)
             {
                 //updating
                 //find the object from the database 
                 var joke = _db.Jokes.FirstOrDefault(x => x.Id == model.Id);
+                joke.Id = model.Id;
                 joke.Question = model.Question;
                 joke.Answer = model.Answer; 
                 joke.Author = model.Author;
@@ -48,6 +49,13 @@ namespace DadJokes.Services
         {
             List<JokeVM> temp = _db.Jokes.Where(x => x.Author == userName).ToList();
             return temp;
+        }
+        public JokeVM GetJokeById(int id)
+        {
+            JokeVM joke = _db.Jokes.FirstOrDefault(x => x.Id == id);
+            if (joke == null)
+                return null;
+            return joke;
         }
     }
 }

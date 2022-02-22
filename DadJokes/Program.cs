@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 string conString = builder.Configuration.GetConnectionString("DefaultConnection");
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(conString));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(conString), ServiceLifetime.Scoped);
 builder.Services.AddControllersWithViews();
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddTransient<IJokeService, JokeService>();

@@ -16,7 +16,7 @@ namespace DadJokes.Controllers.API
         }
         [HttpPost]
         [Route("SaveJoke")]
-        public int AddJoke(JokeVM model)
+        public int AddUpdateJoke(JokeVM model)
         {
             int res = _jokeService.AddUpdate(model);
             return res;

@@ -11,6 +11,7 @@
       <th scope="col">Question</th>
       <th scope="col">Answer</th>
       <th scope="col">Author</th>
+      <th scope = "col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +22,9 @@
                 <td>@joke.Question</td>
                 <td>@joke.Answer</td>
                 <td>@joke.Author</td>
+                <td>
+                    <a class = "btn btn-success" asp-route-id = "@joke.Id" asp-action = "Update" asp-controller = "Joke">Update</a>
+                </td>
             </tr>
         }
     </tbody>

@@ -24,5 +24,12 @@ namespace DadJokes.Controllers
             ViewBag.Jokes = _jokeService.GetJokesByUser(username);
             return View();
         }
+        //we can pass model as a parameter
+        public IActionResult Update(int id)
+        {
+            JokeVM joke = _jokeService.GetJokeById(id);
+            ViewBag.joke = joke;
+            return View();
+        }
     }
 }
