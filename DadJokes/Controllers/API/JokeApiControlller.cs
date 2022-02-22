@@ -21,6 +21,13 @@ namespace DadJokes.Controllers.API
             int res = _jokeService.AddUpdate(model);
             return res;
         }
-
+        [HttpPost]
+        [Route("DeleteJoke")]
+        public int DeleteJoke(JokeVM model)
+        {
+            int id = model.Id;
+            int res = _jokeService.DeleteJoke(id);
+            return res;
+        }
     }
 }

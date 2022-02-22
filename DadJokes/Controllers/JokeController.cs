@@ -31,5 +31,11 @@ namespace DadJokes.Controllers
             ViewBag.joke = joke;
             return View();
         }
+        public IActionResult Delete(int id)
+        {
+            JokeVM joke = _jokeService.GetJokeById(id);
+            ViewBag.joke = joke;
+            return View();
+        }
     }
 }

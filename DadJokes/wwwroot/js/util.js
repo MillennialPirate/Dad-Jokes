@@ -29,7 +29,7 @@ function submitJoke() {
     }
 }
 function updateJoke() {
-    var Id = $("#Id").val();
+    var Id = document.getElementById("#Id").val();
     var Author = $("#Author").val();
     var Question = $("#Question").val();
     var Answer = $("#Answer").val();
@@ -57,4 +57,29 @@ function updateJoke() {
     else {
         window.alert("Please fill the form completely");
     }
+}
+function deleteJoke() {
+    var Id = $("#Id").val();
+    var Author = $("#Author").val();
+    var Question = $("#Question").val();
+    var Answer = $("#Answer").val();
+    var data = {
+        Id: Id,
+        Question: Question,
+        Answer: Answer,
+        Author: Author
+    };
+    console.log(data);
+    $.ajax({
+        url: routeURL + '/api/Jokes/DeleteJoke',
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        success: function (response) {
+            window.location.href = routeURL + "/Joke";
+        },
+        error: function (xhr) {
+            window.alert("try again");
+        }
+    })
 }

@@ -57,5 +57,15 @@ namespace DadJokes.Services
                 return null;
             return joke;
         }
+        public int DeleteJoke(int id)
+        {
+            JokeVM model = _db.Jokes.FirstOrDefault(x => x.Id == id); 
+            if(model != null)
+            {
+                _db.Jokes.Remove(model);
+                _db.SaveChanges();
+            }
+            return 2;
+        }
     }
 }
