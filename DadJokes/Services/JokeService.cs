@@ -9,7 +9,7 @@ namespace DadJokes.Services
         {
             this._db = _db;
         }
-        public async Task<int> AddUpdate(JokeVM model)
+        public int AddUpdate(JokeVM model)
         {
             var question = model.Question; 
             var answer = model.Answer;

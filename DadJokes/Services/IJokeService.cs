@@ -4,6 +4,6 @@ namespace DadJokes.Services
     public interface IJokeService
     {
         public List<JokeVM> GetJokes();
-        public Task<int> AddUpdate(JokeVM model);
+        public int AddUpdate(JokeVM model);
     }
 }
